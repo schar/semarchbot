@@ -9,7 +9,9 @@ import Data.List (findIndices, isPrefixOf)
 import Data.List.Split
 import Data.String.Utils
 import qualified Data.Text as T
-import Network.Curl
+import qualified Data.Text.Lazy as TL
+import qualified Data.Text.Lazy.Encoding as TLE
+import Network.HTTP.Conduit
 import Post
 import System.Process
 import Text.HTML.Scalpel
@@ -57,11 +59,11 @@ on xs =
 
 composeTwete :: String -> IO String
 composeTwete ident = do
-  (_, info) <-
-    curlGetString
-      ("https://semanticsarchive.net/Archive/" ++ ident ++ "/info.txt")
-      []
-  return (process ident $ replace "And " "& " (replace "and " "& " info))
+  info <- simpleHttp ("https://semanticsarchive.net/Archive/" ++ ident ++ "/info.txt")
+  return $
+    process ident
+      (replace "And " "& "
+         (replace "and " "& " (TL.unpack $ TLE.decodeLatin1 info)))
 
 process :: String -> String -> String
 process ident info =
