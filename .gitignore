@@ -1,0 +1,5 @@
+.stack-work/
+*~
+*Credentials.hs
+*.swp
+.DS_Store

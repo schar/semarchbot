@@ -1,0 +1,90 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           semarchbot
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/semarchbot#readme>
+homepage:       https://github.com/githubuser/semarchbot#readme
+bug-reports:    https://github.com/githubuser/semarchbot/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2022 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/semarchbot
+
+library
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  hs-source-dirs:
+      src
+  build-depends:
+      MissingH
+    , base >=4.5 && <5
+    , bytestring
+    , case-insensitive
+    , conduit
+    , conduit-extra
+    , containers
+    , curl
+    , directory
+    , filepath
+    , http-conduit >=2.3.0
+    , lens
+    , network-uri
+    , process
+    , resourcet
+    , scalpel
+    , split
+    , text
+    , transformers
+    , twitter-conduit
+    , twitter-types-lens
+  default-language: Haskell2010
+  exposed-modules:
+      Common
+      Credentials
+      Post
+  other-modules:
+      Paths_semarchbot
+
+executable semarchbot-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_semarchbot
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      MissingH
+    , base >=4.5 && <5
+    , bytestring
+    , case-insensitive
+    , conduit
+    , conduit-extra
+    , containers
+    , curl
+    , directory
+    , filepath
+    , http-conduit >=2.3.0
+    , lens
+    , network-uri
+    , process
+    , resourcet
+    , scalpel
+    , semarchbot
+    , split
+    , text
+    , transformers
+    , twitter-conduit
+    , twitter-types-lens
+  default-language: Haskell2010
