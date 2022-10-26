@@ -6,22 +6,20 @@ cabal-version: 1.12
 
 name:           semarchbot
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/semarchbot#readme>
-homepage:       https://github.com/githubuser/semarchbot#readme
-bug-reports:    https://github.com/githubuser/semarchbot/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2022 Author name here
+description:    Please see the README on GitHub at <https://github.com/schar/semarchbot#readme>
+homepage:       https://github.com/schar/semarchbot#readme
+bug-reports:    https://github.com/schar/semarchbot/issues
+author:         Simon Charlow
+maintainer:     simoncharlow@gmail.com
+copyright:      2022 Simon Charlow
 license:        BSD3
-license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
-    CHANGELOG.md
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/semarchbot
+  location: https://github.com/schar/semarchbot
 
 library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints

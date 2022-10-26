@@ -39,15 +39,14 @@ main
   -- compose twetes for new identifiers
   twetes <- mapM composeTwete newLinks
   mapM_ post $ reverse (map T.pack twetes)
+  mapM_ putStrLn (reverse twetes)
 
-off, on :: String -> String -- extract the semarch identifiers w/ a
-                            -- couple mutually recursive functions
+off, on :: String -> String -- extract the identifiers
 off "error!" = "error!"
 off [] = []
 off ('A':'r':'c':'h':'i':'v':'e':'/':xs) = on xs
 off (_:xs) = off xs
 
---
 on [] = []
 on xs =
   if all isAlphaNum ident
